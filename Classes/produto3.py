@@ -1,10 +1,10 @@
 # aqui vai a implementação da classe Produto, o nome da classe começa com letra maiúscula por convenção!
 class Produto:
-    def __init__(self, codigo: int, descriçao: str, preço:float, quantidade_estoque: int) -> None:
+    def __init__(self, codigo: int, descriçao: str, preço:float) -> None:
         self.__codigo = codigo
         self.__descriçao = descriçao # o __ no inicio do atributo torna ele Privado
         self.__preço = preço
-        self.__quantidade_estoque = quantidade_estoque
+        self.__quantidade_estoque = 0
     def entrada_estoque(self, quantidade: int) -> None:
         self.__quantidade_estoque += quantidade
     def saida_estoque(self, quantidade: int) -> None:
@@ -28,8 +28,11 @@ class Produto:
     def get__preço(self) -> float:
         return self.__preço
     def set__preço(self, preço: float) -> None:
-        self.__preço = preço
-    
+        if preço <= 0:
+            print("Erro: O preço deve ser um valor positivo!")
+        else:
+            self.__preço = preço
+             
     #__quantidade_estoque
     def get__quantidade_estoque(self) -> int:
         return self.__quantidade_estoque
