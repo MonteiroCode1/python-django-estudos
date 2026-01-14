@@ -1,0 +1,1 @@
+from herança01 import Animal
