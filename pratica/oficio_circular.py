@@ -4,16 +4,7 @@ from documento import Documento
 
 class OficioCircular(Documento):
 
-    def __init__(
-        self,
-        numero: int,
-        data_criacao: datetime,
-        resumo: str,
-        texto: str,
-        data_limite: datetime,
-        destinatarios: list
-    ) -> None:
-
+    def __init__(self, numero: int, data_criacao: datetime, resumo: str, texto: str, data_limite: datetime, destinatarios: list) -> None:
         # chama o construtor da classe pai
         super().__init__(numero, data_criacao, resumo)
 
