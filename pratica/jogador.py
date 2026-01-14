@@ -15,6 +15,7 @@ class Jogador:
         # Sempre que um jogador é criado, aumenta o contador
         Jogador.numero_jogadores += 1
 
+
     def sair(self) -> None:
         # Quando o jogador sai, diminuímos o contador global
         Jogador.numero_jogadores -= 1
