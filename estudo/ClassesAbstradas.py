@@ -26,7 +26,8 @@ class Fucionario(ABC):
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 class FucionarioCLT(Fucionario):
-    def __init__(self, nome: str, salario: float) -> None:
-        super().__init__(nome, salario)
+    def __init__(self, nome, salario):
+        super().__init__(self, nome, salario)
     
-    def calcular_salario(self):
+    def calcular_salario(self) -> float:
+        salario_final = salario * 1.1
