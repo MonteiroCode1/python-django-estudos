@@ -1,5 +1,5 @@
 #Criando uma exceção
-class EstoqueInsuficienteException(BaseException):
+class EstoqueInsuficienteException(Exception):
     def __init__(self, mensagem: str) -> None:
         self.mensagem = mensagem
 
