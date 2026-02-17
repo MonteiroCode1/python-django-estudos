@@ -1,5 +1,6 @@
 # alguns cenarios de erros
 # como lidar com erros 
+from error_estoque import EstoqueInsuficienteException
 class Produto:
     def __init__(self, codigo: int, descriçao: str, preço: float) -> None:
         self.__codigo = codigo
@@ -11,7 +12,11 @@ class Produto:
         self.__quantidade_estoque += quantidade
     
     def saida_estoque(self, quantidade: int) -> None:
-        self.__quantidade_estoque -= quantidade
+        if (quantidade <= self.__quantidade_estoque):
+            self.__quantidade_estoque -= quantidade
+        else:
+            raise EstoqueInsuficienteException("Não há Estoque Usuficiente para atender essa Saida!...")
+            
     
     def visualizar_estoque(self) -> None:
         print(f"Quantidade em estoque: {self.__quantidade_estoque}")
@@ -49,5 +54,5 @@ tecnologia = Produto(1, "Notebook Lenovo ideapad3i", 2500.00)
 tecnologia.entrada_estoque(20)
 tecnologia.visualizar_estoque()
 tecnologia.descriçao
-tecnologia.saida_estoque(15)
+tecnologia.saida_estoque(21)
 tecnologia.visualizar_estoque()
